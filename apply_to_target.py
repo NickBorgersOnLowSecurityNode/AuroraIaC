@@ -43,7 +43,7 @@ for existing_effect in existing_effects["animations"]:
   delete_response = requests.put(url, data=json.dumps(request))
   if delete_response.status_code >=200 and delete_response.status_code <300 :
     print("Deleted: " + existing_effect["animName"])
-    time.sleep(0.1)
+    time.sleep(0.5)
   else:
     print("Failed to delete " + existing_effect["animName"])
     print(delete_response)
@@ -62,7 +62,7 @@ for effect_to_apply in effects_to_apply["animations"]:
   create_response = requests.put(url, data=json.dumps(request))
   if create_response.status_code >=200 and create_response.status_code <300 :
     print("Create: " + effect_to_apply["animName"])
-    time.sleep(0.1)
+    time.sleep(0.5)
   else:
     print("Failed to create " + effect_to_apply["animName"])
     print(delete_response)
